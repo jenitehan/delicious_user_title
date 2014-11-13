@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements template_preprocess_page().
+ *
+ * Fix titles on user pages.
+ */
+function delicious_user_title_preprocess_page(&$variables) {
+  $item = menu_get_item();
+  if (isset($item['path'])) {
+    switch($item['path']) {
+      case 'user':
+        if (user_is_anonymous()) {
+          drupal_set_title('Log in');
+        }
+        break;
+      case 'user/login':
+        drupal_set_title('Log in');
+        break;
+      case 'user/register':
+        drupal_set_title('Create new account');
+        break;
+      case 'user/password':
+        drupal_set_title('Request new password');
+        break;
+    }
+  }
+}

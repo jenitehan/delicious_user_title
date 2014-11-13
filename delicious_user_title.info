@@ -1,0 +1,5 @@
+name = Delicious User Title
+description = Sets appropriate titles on Drupal user account pages.
+version = 7.x-1.0
+core = 7.x
+package = Delicious Creative Custom Modules
